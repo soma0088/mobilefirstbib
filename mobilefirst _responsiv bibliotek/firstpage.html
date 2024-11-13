@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile first_ Responsiv _ Biblotek</title>
+    <script src="javascrip/myscripts.js"></script>
+   <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Logo startts here -->
+    <div class="logo-container">
+        <div class="logo"><a href="firstpage.html"><img src="css/images /logo.png" alt="HTML tutorial"
+                    style="width:170px;height: 170pxpx;"></a></div>
+    </div>
+    <!-- End of Logo  -->
+
+    <!-- start on mobile first responsive navigation bar  -->
+    <div class="navbar">
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span> <!-- Hamburger icon -->
+        <a href="firstpage.html" class="active">Første side</a>
+        <a href="books.html">Bøger</a>
+        <a href="#movies">Film</a>
+        <a href="#activities">Aktiviteter</a>
+        <a href="#recommendations">Anbefalinger</a>
+    </div>
+    <!-- End of mobile first responsive navigation bar  -->
+    <!-- start on opening hours image  -->
+    <div class="image-container">
+        <img src="css/images /openinghours.jpg" alt="Bookstore Interior" class="responsive-image">
+    </div>
+    <!--End of opening hours image  -->
+    <!-- start of animated text -->
+    <h1 class="ml10">
+        <span class="text-wrapper">
+          <span class="letters">opening hours:</span>
+          <span class="letters">Every week from 8 to 22</span>
+        </span>
+      </h1>
+      
+      <!-- end of animated text -->
+    <!-- start of image carousel -->
+
+    <div class="carousel-container">
+        <div class="carousel">
+         
+          <div class="carousel-images">
+            <img src="css/images /carousel1.jpg" alt="Image 1" class="carousel-image">
+            <img src="css/images /carousel2.png" alt="Image 2" class="carousel-image">
+            <img src="css/images /carousel3.png" alt="Image 3" class="carousel-image">
+          </div>
+          <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+          <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <span class="dot" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+      </div>
+    </div>
+ <!-- End of image carousel -->
+
+
+<!-- start of the 2 column place in the page  -->
+ <div class="container">
+    <div class="column column-left">
+      <h2>Column 1</h2>
+      <p>This is the content for the first column. It will stack above the second column on mobile devices.</p>
+    </div>
+    <div class="column column-right">
+      <h2>Column 2</h2>
+      <p>This is the content for the second column. It will appear next to the first column on larger screens.</p>
+    </div>
+  </div>
+  <!-- End of the 2 column place in the page  -->
+
+  <!-- beginning of footer -->
+  <footer class="footer">
+    <div class="footer-column">
+      <h3>følg os på de sociale media</h3>
+      <img src="css/images /instagram.png" alt="HTML tutorial" style="width:100px;height:100px;"></a>
+      <img src="css/images /facebook.png" alt="HTML tutorial" style="width:100px;height:100px;"></a>
+     
+    </div>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <ul>
+        <li><img src="css/images /email.gif" alt="HTML tutorial" style="width:30px;height:30px; border-radius: 10%;"></a>
+      : info@example.com</li>
+        <li>Phone: +123 456 7890</li>
+        <li>Address: 123 Main Street, City, Country</li>
+      </ul>
+    </div>
+  </footer>
+    <!-- End  of footer -->
+
+
+</body>
+ 
+<script>
+var textWrapper = document.querySelector('.ml10 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml10 .letter',
+    rotateY: [-90, 0],
+    duration: 1300,
+    delay: (el, i) => 45 * i
+  }).add({
+    targets: '.ml10',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
+
+ 
+
+</html>
